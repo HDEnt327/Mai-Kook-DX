@@ -1,0 +1,8 @@
+{
+    "bind_users": [
+        {
+            "user_Pname": "example",
+            "user_id": "example123"
+        }
+    ]
+}
