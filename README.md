@@ -2,8 +2,16 @@
 KOOK Bot Merge for PhiEditer Community
 Based on khl.py and open-source bots (listed below)
 
+## Usage
+Follow instructions on TWT233/khl.py to install khl.py
+Download the code through Github as a ZIP an unzip the code anywhere
+Fill in config.json with your KOOK Bot token
+Run bot.py, and you're good to go!
+Invite your bot to a server, send /help, and it should reply the help menu
+
 
 ## List of used bots
+HDEnt327/PEBot (original code)
 Diving-Fish/mai-bot (modified to work with khl.py and KOOK api)
 
 
