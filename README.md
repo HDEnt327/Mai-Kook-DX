@@ -47,7 +47,7 @@ Invite your bot to a server, send `/phelp`, and it should reply the help menu
 
 ### MIT License
 
-Copyright (c) [2023] [HDEnt0327]
+Copyright (c) 2023 HDEnt
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
