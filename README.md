@@ -1,8 +1,22 @@
-# PEBot
+# Mai-Kook-DX
 
-KOOK Bot Merge for PhiEditer Community
+maimai bot for KOOK
 
-Based on khl.py and open-source bots (listed below)
+Based on [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) and [TWT233/khl.py](https://github.com/TWT233/khl.py)
+
+
+## Introduction (TL;DR)
+
+This is a KOOK Bot for maimai related functionality, based on the mai-bot project
+
+Certain functionality may differ from the original mai-bot
+
+For example, in the original mai-bot, when b40 is sent, the bot looks for the user's QQ number, and asks the database from *Diving-Fish* for the prober id, and uses the prober id to gather data to generate the b40 image.
+
+However, for Mai-Kook-DX, users will need to /bind their prober id first, the bot will save the user's KOOK id and prober id locally, the next time the user sends /b40, the bot will look for the user's prober id bound to their KOOK id, then asks data from the *Diving-Fish* database.
+
+Other functionality may also differ, you can check the code or /phelp to look for specific instructions
+
 
 ## Usage
 
@@ -14,7 +28,7 @@ Fill in config.json with your KOOK Bot token
 
 Run bot.py, and you're good to go!
 
-Invite your bot to a server, send /help, and it should reply the help menu
+Invite your bot to a server, send `/phelp`, and it should reply the help menu
 
 
 ## List of used bots
