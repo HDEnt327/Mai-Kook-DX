@@ -7,6 +7,8 @@ Based on [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) and [TWT2
 
 ## Introduction (TL;DR)
 
+*skip to [Usage](https://github.com/HDEnt327/Mai-Kook-DX#usage) to run Mai-Kook-DX on your own machine*
+
 This is a KOOK Bot for maimai related functionality, based on the mai-bot project
 
 Certain functionality may differ from the original mai-bot
