@@ -26,6 +26,10 @@ Follow instructions on [TWT233/khl.py](https://github.com/TWT233/khl.py) to inst
 
 Download the code through Github as a ZIP an unzip the code anywhere
 
+Refer to [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) to download source files
+
+> source files are only for study purposes, please delete them in less than 24 hours
+
 Fill in config.json with your KOOK Bot token
 
 Run bot.py, and you're good to go!
