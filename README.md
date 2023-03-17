@@ -1,4 +1,4 @@
-(profile.jpg)
+<img src="profile.jpg" width=150>
 
 # Mai-Kook-DX
 
