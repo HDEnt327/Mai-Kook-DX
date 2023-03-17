@@ -1,3 +1,4 @@
+<div align=center>
 <img src="profile.jpg" width=150>
 
 # Mai-Kook-DX
@@ -9,6 +10,7 @@
 maimai bot for [KOOK](https://www.kookapp.cn/)
 
 Based on [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) and [TWT233/khl.py](https://github.com/TWT233/khl.py)
+</div>
 
 ## Disclaimer
 
