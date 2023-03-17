@@ -18,15 +18,18 @@ with open('config.json', 'r', encoding='utf-8') as f:
 bot = Bot(token=config['token'])
 
 
-
+# Deletes all messages in a text channel
 @bot.command(name='delete')
 async def delete(bot: Bot, msg: Message):
     print('[LISTEN] DELETE Action request received')
+    # Define channel to be searched
     channel = msg.ctx.channel
     messageList = await PublicTextChannel.list_messages(channel)
     id_list = []
+    # Append message ids to idlist
     for items in messageList['items']:
         id_list.append(items['id'])
+    # Delete messages according to ids
     for ids in id_list:
         await bot.client.gate.exec_req(api.Message.delete(ids))
     current_date_and_time = datetime.now()
@@ -36,7 +39,7 @@ async def delete(bot: Bot, msg: Message):
     print('[DONE]')
 
 
-
+# Generate and send b50
 @bot.command(name="b50")
 async def b50(msg: Message, username: str = ""):
     if username == "":
@@ -125,6 +128,8 @@ async def b40(msg: Message, username: str = ""):
         print('[DONE]')
 
 
+# Searches for user according to user KOOK id and returns prober id
+# id binds are stored in binddata.json
 async def searchUser(userid: str, filename='binddata.json') -> str:
     with open(filename, 'r+') as file:
         file_data = json.load(file)
@@ -134,7 +139,7 @@ async def searchUser(userid: str, filename='binddata.json') -> str:
         return 'USERNOTFOUND'
 
 
-
+# Bind KOOK id with prober id
 @bot.command(name='bind')
 async def bind(bot: Bot, msg: Message, username: str = "NO_PARAM"):
     print('[LISTEN] BIND Action request received')
@@ -158,6 +163,7 @@ async def bind(bot: Bot, msg: Message, username: str = "NO_PARAM"):
     print('[WORKER] BIND Message sent')
     print('[DONE]')
 
+# Unbind KOOK id with prober id
 @bot.command(name='unbind')
 async def unbind(bot: Bot, msg: Message):
     print('[LISTEN] UNBIND Action request received')
@@ -175,6 +181,7 @@ async def unbind(bot: Bot, msg: Message):
     print('[WORKER] UNBIND Message sent')
     print('[DONE]')
 
+# Appends new user id
 async def write_userData(new_data, filename='binddata.json'):
     with open(filename, 'r+') as file:
         file_data = json.load(file)
@@ -182,6 +189,7 @@ async def write_userData(new_data, filename='binddata.json'):
         file.seek(0)
         json.dump(file_data, file, indent=4)
 
+# Deletes user id
 async def unwrite_userData(userid: str, filename='binddata.json'):
     with open(filename, 'r+') as file:
         file_data = json.load(file)
@@ -338,9 +346,10 @@ async def help(msg: Message):
     print('[CARD WORKER] Message sent')
     print('[DONE]')
 
+# Pings bot
 @bot.command(name='ping')
 async def ping(msg: Message):
-    print('[LISTEN] PING Initiated')
+    print('[LISTEN] PING Initiasted')
     await msg.reply('勢いよく叩いたり、スライドさせたりしないでください。')
     print('[WORKER] Message sent')
 
