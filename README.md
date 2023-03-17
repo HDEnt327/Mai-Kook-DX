@@ -1,3 +1,5 @@
+(profile.jpg)
+
 # Mai-Kook-DX
 
 maimai bot for [KOOK](https://www.kookapp.cn/)
