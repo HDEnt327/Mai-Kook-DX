@@ -2,6 +2,10 @@
 
 # Mai-Kook-DX
 
+![badge](https://img.shields.io/github/license/HDEnt327/Mai-Kook-DX)
+[![badge](https://img.shields.io/badge/KOOK-Join-brightgreen)](https://kook.top/ISlB9G)
+![badge](https://img.shields.io/github/last-commit/HDEnt327/Mai-Kook-DX)
+
 maimai bot for [KOOK](https://www.kookapp.cn/)
 
 Based on [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) and [TWT233/khl.py](https://github.com/TWT233/khl.py)
