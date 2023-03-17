@@ -240,11 +240,13 @@ BREAK: {chart['notes'][4]}
             img_url = await bot.client.create_asset('src/static/mai/cover/' + image)
             print('[CARD WORKER] QUERY Image asset created')
             cm = CardMessage()
-            c1 = Card(Module.Header('查歌结果'))
+            c1 = Card(Module.Header(f"{music['id']}. {music['title']}\n"))
             c1.append(Module.Divider())
-            c1.append(Module.Section(Element.Text(f"{music['id']}. {music['title']}\n")))
-            c1.append(Module.Container(Element.Image(src=img_url)))
-            c1.append(Module.Section(Element.Text(msg)))
+            c1.append(Module.Section(Element.Text(msg), accessory=Element.Image(src=img_url), mode=Types.SectionMode.RIGHT))
+            # Big image mode
+            # c1.append(Module.Section(Element.Text(f"{music['id']}. {music['title']}\n")))
+            # c1.append(Module.Container(Element.Image(src=img_url)))
+            # c1.append(Module.Section(Element.Text(msg)))
             cm.append(c1)
             print('[CARD WORKER] QUERY Card build complete!')
             await message.reply(cm)
@@ -264,11 +266,13 @@ BREAK: {chart['notes'][4]}
         try:
             img_url = await bot.client.create_asset('src/static/mai/cover/' + image)
             cm = CardMessage()
-            c1 = Card(Module.Header('查歌结果'))
+            c1 = Card(Module.Header(f"{music['id']}. {music['title']}\n"))
             c1.append(Module.Divider())
-            c1.append(Module.Section(Element.Text(f"{music['id']}. {music['title']}\n")))
-            c1.append(Module.Container(Element.Image(src=img_url)))
-            c1.append(Module.Section(Element.Text(f"艺术家: {music['basic_info']['artist']}\n分类: {music['basic_info']['genre']}\nBPM: {music['basic_info']['bpm']}\n版本: {music['basic_info']['from']}\n难度: {'/'.join(music['level'])}")))
+            c1.append(Module.Section(Element.Text(f"艺术家: {music['basic_info']['artist']}\n分类: {music['basic_info']['genre']}\nBPM: {music['basic_info']['bpm']}\n版本: {music['basic_info']['from']}\n难度: {'/'.join(music['level'])}"), accessory=Element.Image(src=img_url), mode=Types.SectionMode.RIGHT))
+            # Big image mode
+            # c1.append(Module.Section(Element.Text(f"{music['id']}. {music['title']}\n")))
+            # c1.append(Module.Container(Element.Image(src=img_url)))
+            # c1.append(Module.Section(Element.Text(f"艺术家: {music['basic_info']['artist']}\n分类: {music['basic_info']['genre']}\nBPM: {music['basic_info']['bpm']}\n版本: {music['basic_info']['from']}\n难度: {'/'.join(music['level'])}")))
             cm.append(c1)
             print('[CARD WORKER] QUERY Card build complete!')
             await message.reply(cm)
@@ -334,6 +338,10 @@ async def help(msg: Message):
     print('[CARD WORKER] Message sent')
     print('[DONE]')
 
-
+@bot.command(name='ping')
+async def ping(msg: Message):
+    print('[LISTEN] PING Initiated')
+    await msg.reply('勢いよく叩いたり、スライドさせたりしないでください。')
+    print('[WORKER] Message sent')
 
 bot.run()
