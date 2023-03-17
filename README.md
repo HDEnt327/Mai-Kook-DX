@@ -30,7 +30,7 @@ Certain functionality may differ from the original mai-bot
 
 Follow instructions on [TWT233/khl.py](https://github.com/TWT233/khl.py) to install khl.py
 
-Download the code through Github as a ZIP an unzip the code anywhere
+Download the Mai-Kook-DX code through GitHub as a ZIP an unzip the code anywhere
 
 Refer to [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) to download source files
 
