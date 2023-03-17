@@ -1,6 +1,6 @@
 # Mai-Kook-DX
 
-maimai bot for KOOK
+maimai bot for [KOOK](https://www.kookapp.cn/)
 
 Based on [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) and [TWT233/khl.py](https://github.com/TWT233/khl.py)
 
@@ -13,11 +13,11 @@ This is a KOOK Bot for maimai related functionality, based on the mai-bot projec
 
 Certain functionality may differ from the original mai-bot
 
-For example, in the original mai-bot, when b40 is sent, the bot looks for the user's QQ number, and asks the database from *Diving-Fish* for the prober id, and uses the prober id to gather data to generate the b40 image.
+> For example, in the original mai-bot, when `b40` is sent, the bot looks for the user's QQ number, and asks the database from *Diving-Fish* for the prober id, and uses the prober id to gather data to generate the b40 image.
 
-However, for Mai-Kook-DX, users will need to /bind their prober id first, the bot will save the user's KOOK id and prober id locally, the next time the user sends /b40, the bot will look for the user's prober id bound to their KOOK id, then asks data from the *Diving-Fish* database.
+> However, for Mai-Kook-DX, users will need to `/bind` their prober id first, the bot will save the user's KOOK id and prober id locally, the next time the user sends `/b40`, the bot will look for the user's prober id bound to their KOOK id, then asks data from the *Diving-Fish* database.
 
-Other functionality may also differ, you can check the code or /phelp to look for specific instructions
+> Other functionality may also differ, you can check the code or /phelp to look for specific instructions
 
 
 ## Usage
