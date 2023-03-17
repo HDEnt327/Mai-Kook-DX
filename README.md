@@ -4,6 +4,12 @@ maimai bot for [KOOK](https://www.kookapp.cn/)
 
 Based on [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) and [TWT233/khl.py](https://github.com/TWT233/khl.py)
 
+## Disclaimer
+
+This repository, the Mai-Kook-DX project, and other related repositories and projects are purely for python studying and interest, and any commercial uses are strictly prohibited. 
+
+Of course, if there is copyright infringement, you can contact me to delete this repository.
+
 
 ## Introduction (TL;DR)
 
