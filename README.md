@@ -22,7 +22,7 @@ Other functionality may also differ, you can check the code or /phelp to look fo
 
 ## Usage
 
-Follow instructions on TWT233/khl.py to install khl.py
+Follow instructions on [TWT233/khl.py](https://github.com/TWT233/khl.py) to install khl.py
 
 Download the code through Github as a ZIP an unzip the code anywhere
 
@@ -31,13 +31,6 @@ Fill in config.json with your KOOK Bot token
 Run bot.py, and you're good to go!
 
 Invite your bot to a server, send `/phelp`, and it should reply the help menu
-
-
-## List of used bots
-
-HDEnt327/PEBot (original code)
-
-Diving-Fish/mai-bot (modified to work with khl.py and KOOK api)
 
 
 ## License
