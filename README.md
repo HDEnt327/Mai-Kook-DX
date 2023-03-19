@@ -40,6 +40,9 @@ Download the Mai-Kook-DX code through GitHub as a ZIP an unzip the code anywhere
 
 Open and cmd/terminal window and run `pip install -r requirements.txt`
 
+> If one or two don't install sucessfully, still try finishing the steps and run the bot, it should stil work ok
+if it doesn't you may have to troubleshoot a bit and get the packages installed
+
 Refer to [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) to download source files
 
 > source files are only for study purposes, please delete them in less than 24 hours
