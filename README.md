@@ -48,7 +48,7 @@ Fill in config.json with your KOOK Bot token
 
 Run bot.py, and you're good to go!
 
-Invite your bot to a server, send `/phelp`, and it should reply the help menu
+Invite your bot to a server, send `/mhelp`, and it should reply the help menu
 
 
 ## License
