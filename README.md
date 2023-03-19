@@ -36,9 +36,9 @@ Certain functionality may differ from the original mai-bot
 
 ## Usage
 
-Follow instructions on [TWT233/khl.py](https://github.com/TWT233/khl.py) to install khl.py
-
 Download the Mai-Kook-DX code through GitHub as a ZIP an unzip the code anywhere
+
+Open and cmd/terminal window and run `pip install -r requirements.txt`
 
 Refer to [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) to download source files
 
