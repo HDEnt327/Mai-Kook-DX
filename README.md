@@ -42,7 +42,9 @@ Open and cmd/terminal window and run `pip install -r requirements.txt`
 
 > If one or two don't install sucessfully, still try finishing the steps and run the bot, it should stil work ok
 
-> if it doesn't you may have to troubleshoot a bit and get the packages installed
+> If it doesn't you may have to troubleshoot a bit and get the packages installed
+
+> Most important ones should be PIL and khl.py
 
 Refer to [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) to download source files
 
