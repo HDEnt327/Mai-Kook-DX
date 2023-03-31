@@ -36,9 +36,9 @@ Certain functionality may differ from the original mai-bot
 
 ## Usage
 
-Download the Mai-Kook-DX code through GitHub as a ZIP an unzip the code anywhere
+1. Download the Mai-Kook-DX code through GitHub as a ZIP an unzip the code anywhere
 
-Open and cmd/terminal window and run `pip install -r requirements.txt`
+2. Open and cmd/terminal window and run `pip install -r requirements.txt`
 
 > If one or two don't install sucessfully, still try finishing the steps and run the bot, it should stil work ok
 
@@ -46,15 +46,15 @@ Open and cmd/terminal window and run `pip install -r requirements.txt`
 
 > Most important ones should be PIL and khl.py
 
-Refer to [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) to download source files
+3. Refer to [Diving-Fish/mai-bot](https://github.com/Diving-Fish/mai-bot) to download source files
 
 > source files are only for study purposes, please delete them in less than 24 hours
 
-Fill in config.json with your KOOK Bot token
+4. Fill in config.json with your KOOK Bot token
 
-Run bot.py, and you're good to go!
+5. Run bot.py, and you're good to go!
 
-Invite your bot to a server, send `/mhelp`, and it should reply the help menu
+6. Invite your bot to a server, send `/mhelp`, and it should reply the help menu
 
 
 ## License
