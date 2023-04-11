@@ -1,6 +1,10 @@
 import json
 import io
+import time
+import logging
+import sys
 
+from apscheduler.schedulers.background import BackgroundScheduler
 from datetime import datetime
 from khl import Bot, Message, PublicTextChannel, api
 from khl.card import CardMessage, Card, Module, Element, Types, Struct
@@ -9,37 +13,52 @@ from plugins.maimai_best_40 import generate
 from plugins.image import *
 from plugins.tool import hash
 from plugins.maimaidx_music import *
-import re
+from bmrequest import bmrequest
 
-
+# setup bot and tokens
 with open('config.json', 'r', encoding='utf-8') as f:
     config = json.load(f)
 
 bot = Bot(token=config['token'])
 
 
+# FIX LOGGER LATER
+# logger = logging.getLogger(__name__)
+# logger.setLevel(logging.INFO)
+# logHandler = logging.FileHandler('logs.log')
+# logHandler.setLevel(logging.INFO)
+# logFormatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+
+# TEMP LOGGER FOR NOW
+logging.basicConfig(filename='logs.log', encoding='utf-8', level=logging.INFO, format='%(levelname)s - %(asctime)s - %(name)s - %(message)s')
+
+
 # Deletes all messages in a text channel
-@bot.command(name='delete')
-async def delete(bot: Bot, msg: Message):
-    print('[LISTEN] DELETE Action request received')
-    # Define channel to be searched
-    channel = msg.ctx.channel
-    messageList = await PublicTextChannel.list_messages(channel)
-    id_list = []
-    # Append message ids to idlist
-    for items in messageList['items']:
-        id_list.append(items['id'])
-    # Delete messages according to ids
-    for ids in id_list:
-        await bot.client.gate.exec_req(api.Message.delete(ids))
-    current_date_and_time = datetime.now()
-    print('[WORKER] DELETE Done', current_date_and_time)
-    await msg.ctx.channel.send('此频道可以通过/delete一键清空')
-    print('[WORKER] DELETE Message sent')
-    print('[DONE]')
+# CURRENTLY DEPRECATED
+# MAY BE REMOVED SOON
+# POSSIBLY MOVE TO PEBOT LATER
+# @bot.command(name='delete')
+# async def delete(bot: Bot, msg: Message):
+#     print('[LISTEN] DELETE Action request received')
+#     # Define channel to be searched
+#     channel = msg.ctx.channel
+#     messageList = await PublicTextChannel.list_messages(channel)
+#     id_list = []
+#     # Append message ids to idlist
+#     for items in messageList['items']:
+#         id_list.append(items['id'])
+#     # Delete messages according to ids
+#     for ids in id_list:
+#         await bot.client.gate.exec_req(api.Message.delete(ids))
+#     current_date_and_time = datetime.now()
+#     print('[WORKER] DELETE Done', current_date_and_time)
+#     await msg.ctx.channel.send('此频道可以通过/delete一键清空')
+#     print('[WORKER] DELETE Message sent')
+#     print('[DONE]')
 
 
 # Generate and send b50
+# Calls for Generate50 Written by Diving-Fish
 @bot.command(name="b50")
 async def b50(msg: Message, username: str = ""):
     if username == "":
@@ -204,9 +223,13 @@ async def unwrite_userData(userid: str, filename='binddata.json'):
         file.seek(0)
         json.dump(file_data, file, indent=4)
 
+# I am very proud of this original code btw
+# The whole binding and user id system is very original hehe
+# Basically the only bit of original code in this repo LOL
+# Everything else was just modified from something else
 
 
-
+# Query for chart or song
 @bot.command(name='查歌')
 async def query_chart(bot: Bot, message: Message, songid: str, chartlvl: str = ''):
     print('[LISTEN] QUERY Initiated')
@@ -293,6 +316,7 @@ BREAK: {chart['notes'][4]}
             print('[ABORT]')
 
 
+# Query for chart/map
 @bot.command(name='查询')
 async def search_music(bot: Bot, message: Message, search: str = ''):
     print('[LISTEN] SEARCH Initiated')
@@ -323,22 +347,36 @@ async def search_music(bot: Bot, message: Message, search: str = ''):
         await message.reply(f"结果过多（{len(res)} 条），请缩小查询范围。")
 
 
-
-@bot.command(name='phelp')
+# Help menu
+# Prioritize reference to wiki page
+@bot.command(name='mhelp')
 async def help(msg: Message):
     print('[LISTEN] HELP Action request received')
     cm = CardMessage()
-    c1 = Card(Module.Header('PhiEditer Bot HELP'))
+    c1 = Card(Module.Header('Mai-Kook-DX Help Menu'))
     c1.append(Module.Divider())
-    c1.append(Module.Section(Element.Text('**maimai相关**')))
-    c1.append(Module.Section(Element.Text('`/bind [查分器id]` 绑定账号')))
+    c1.append(Module.Section(Element.Text('***第一次使用强烈建议阅读使用文档：[点此进入](https://github.com/HDEnt327/Mai-Kook-DX/wiki)***')))
+    c1.append(Module.Divider())
+    c1.append(Module.Section(Element.Text('**B40/B50查分**')))
+    c1.append(Module.Divider())
+    c1.append(Module.Section(Element.Text('`/bind [查分器id]` 绑定账号\n如：`/bind Example123`')))
+    c1.append(Module.Divider())
     c1.append(Module.Section(Element.Text('`/unbind` 解绑账号')))
-    c1.append(Module.Section(Element.Text('`/b40 <查分器id>` 查询B40')))
-    c1.append(Module.Section(Element.Text('`/b50 <查分器id>` 查询B50')))
-    c1.append(Module.Section(Element.Text('绑定账号后查询B40/B50不必再输入查分器id')))
-    c1.append(Module.Section(Element.Text('`/查询 [关键词]` 查询歌曲')))
-    c1.append(Module.Section(Element.Text('`/查歌 [歌曲id] <难度>` 歌曲或谱面')))
     c1.append(Module.Divider())
+    c1.append(Module.Section(Element.Text('`/b40 <查分器id>` 查询B40\n如：`/b40 Example123`\n如果绑定了查分器账号可直接：`/b40`')))
+    c1.append(Module.Divider())
+    c1.append(Module.Section(Element.Text('`/b50 <查分器id>` 查询B50\n如：`/b50 Example123`\n如果绑定了查分器账号可直接：`/b50`')))
+    c1.append(Module.Divider())
+    c1.append(Module.Section(Element.Text('绑定账号后查询B40/B50不必再输入查分器id')))
+    c1.append(Module.Divider())
+    c1.append(Module.Section(Element.Text('**查歌/查谱面**')))
+    c1.append(Module.Divider())
+    c1.append(Module.Section(Element.Text('`/查询 [关键词]` 查询歌曲\n如：`/查询 MAXRAGE`')))
+    c1.append(Module.Divider())
+    c1.append(Module.Section(Element.Text('`/查歌 [歌曲id] <难度>` 查歌曲或谱面\n如：`/查歌 11102 紫` 或：`/查歌 11102`')))
+    c1.append(Module.Divider())
+    c1.append(Module.Section(Element.Text('[ ] 内的内容为必填，<> 内的内容为可填')))
+    c1.append(Module.Section(Element.Text('输入参数的时候不必输入 [ ] 和 <>')))
     c1.append(Module.Section(Element.Text('更多功能编写中')))
     cm.append(c1)
     print('[CARD WORKER] Card message build complete')
@@ -353,4 +391,5 @@ async def ping(msg: Message):
     await msg.reply('勢いよく叩いたり、スライドさせたりしないでください。')
     print('[WORKER] Message sent')
 
+# run the bot
 bot.run()
