@@ -1,0 +1,84 @@
+{
+    "bind_users": [
+        {
+            "user_Pname": "example",
+            "user_id": "example123"
+        },
+        {
+            "user_Pname": "FaqBot",
+            "user_id": "2762664923"
+        },
+        {
+            "user_Pname": "ironman_sm",
+            "user_id": "3058189315"
+        },
+        {
+            "user_Pname": "6666",
+            "user_id": "2959804271"
+        },
+        {
+            "user_Pname": "HD_Entertainment",
+            "user_id": "1894029144"
+        },
+        {
+            "user_Pname": "NARROW",
+            "user_id": "1018433638"
+        },
+        {
+            "user_Pname": "KOGAAA",
+            "user_id": "2953053943"
+        },
+        {
+            "user_Pname": "Kea_444",
+            "user_id": "1835676661"
+        },
+        {
+            "user_Pname": "1336868226",
+            "user_id": "693760738"
+        },
+        {
+            "user_Pname": "frostjk",
+            "user_id": "3190340916"
+        },
+        {
+            "user_Pname": "icycola",
+            "user_id": "433065480"
+        },
+        {
+            "user_Pname": "voidangel",
+            "user_id": "2226523703"
+        },
+        {
+            "user_Pname": "llkzj",
+            "user_id": "2701749422"
+        },
+        {
+            "user_Pname": "Chips_pvp",
+            "user_id": "1944374444"
+        },
+        {
+            "user_Pname": "YuanZhi",
+            "user_id": "925994583"
+        },
+        {
+            "user_Pname": "VitaL",
+            "user_id": "2738511656"
+        },
+        {
+            "user_Pname": "XIAMO",
+            "user_id": "1418013113"
+        },
+        {
+            "user_Pname": "kasumi",
+            "user_id": "2193021784"
+        },
+        {
+            "user_Pname": "Lasuenal",
+            "user_id": "480907129"
+        },
+        {
+            "user_Pname": "hunghao",
+            "user_id": "498586376"
+        }
+    ]
+}
