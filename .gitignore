@@ -5,4 +5,4 @@
 /supervisord.conf
 /supervisord.log
 /__pycache__
-/binddata.json
+binddata.json
