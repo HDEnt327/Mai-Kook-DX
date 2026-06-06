@@ -216,7 +216,7 @@ async def query_chart(bot: Bot, message: Message, songid: str, chartlvl: str = '
             img_url = await bot.client.create_asset('src/static/mai/cover/' + image)
             cm = CardMessage()
             c1 = Card(Module.Header(f"{music['id']}. {music['title']}\n"))
-            msg = f"艺术家: {music['basic_info']['artist']}\n分类: {music['basic_info']['genre']}\nBPM: {music['basic_info']['bpm']}\n版本: {music['basic_info']['from']}\n难度: {'/'.join(musi[...]
+            msg = f"艺术家: {music['basic_info']['artist']}\n分类: {music['basic_info']['genre']}\nBPM: {music['basic_info']['bpm']}\n版本: {music['basic_info']['from']}\n难度: {'/'.join(music['level'])}"
             if mode == "small":
                 c1.append(Module.Divider())
                 c1.append(Module.Section(Element.Text(msg), accessory=Element.Image(src=img_url), mode=Types.SectionMode.RIGHT))
